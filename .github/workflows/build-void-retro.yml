@@ -65,13 +65,8 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Install build tools
-        run: sudo apt update && sudo apt install -y p7zip-full curl wget android-sdk-libsparse-utils
-
-      - name: Download kernel bundle
-        run: |
-          KERNEL_VER="${{ github.event.inputs.kernel_version }}"
-          if [ -z "$KERNEL_VER" ]; then KERNEL_VER="7.1"; fi
-          gh release download "kernel-bundle-${KERNEL_VER}" --pattern "*.deb" --repo "${{ github.repository }}" --clobber
+        run: sudo apt update && sudo apt install -y p7zip-full curl wget android-sdk-libsparse-util
+       
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
