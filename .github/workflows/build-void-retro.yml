@@ -65,7 +65,7 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Install build tools
-        run: sudo apt update && sudo apt install -y p7zip-full curl wget
+        run: sudo apt update && sudo apt install -y p7zip-full curl wget libarchive-tools
        
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
